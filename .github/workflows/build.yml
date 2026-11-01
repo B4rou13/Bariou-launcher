@@ -22,9 +22,10 @@ jobs:
           gradle-version: "8.9"
 
       - name: Build debug APK
+        working-directory: TvLauncher
         run: gradle assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
           name: tv-launcher-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: TvLauncher/app/build/outputs/apk/debug/*.apk
